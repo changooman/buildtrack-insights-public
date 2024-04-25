@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildTrack Insights</title>
+    <link rel="stylesheet" href="{% static 'homepage.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+<body style="background-image: url('{% static 'city_backdrop.png' %}'); background-size: cover;">
+<header>
+    <a href="{% url 'home' %}">
+        <img src="{% static 'logo_buildtrackv2.png' %}" alt="BuildTrack Insights Logo" class="logo">
+    </a>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Features</a>
+                <div class="dropdown-content">
+                    <!-- Update the following links based on your available pages -->
+                    <a href="{% url 'buildtrack' %}">Historical Data</a>
+                </div>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="about" class="section">
+        <div class="content">
+            <h2 class="section-title">About BuildTrack Insights</h2>
+            <p>Welcome to BuildTrack Insights! Our platform offers a comprehensive exploration of historical data on new construction sales, providing valuable insights into unique home sales count, median sale prices, price per square foot, and mean sales prices across various geographic regions. Dive into the trends shaping the real estate market, filter data by geographic regions such as state and city, and uncover key patterns to navigate the world of real estate with confidence.</p>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="content">
+            <h2 class="section-title">Key Features</h2>
+            <img src="{% static 'example.png' %}" alt="Example Image" class="example-image">
+            <ul class="feature-list">
+                <li>View historical data on new construction sales.
+                    <ul class="sub-feature-list">
+                        <li>Filter data by geographic regions such as state and city.</li>
+                        <li>Explore unique home sales count.</li>
+                        <li>Discover median sale prices.</li>
+                        <li>Examine price per square foot.</li>
+                        <li>Analyze mean sales price.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="content">
+            <h2 class="section-title">Contact Us</h2>
+            <p>For inquiries or support, please email us at <a href="mailto:changooman@gmail.com">changooman@gmail.com</a>.</p>
+        </div>
+    </section>
+
+</main>
+<footer>
+    &copy; 2024 BuildTrack Insights. All rights reserved.
+</footer>
+</body>
+</html>

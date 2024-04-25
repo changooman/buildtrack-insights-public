@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Title</title>
+    <style>
+        body {
+            background-image: url('{% static 'city_backdrop.png' %}');
+            background-size: cover;
+            /* Other styles */
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'records.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Data</title>
+    <link rel="stylesheet" href="{% static 'records.css' %}">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <a href="{% url 'home' %}">
+            <img src="{% static 'logo_buildtrackv2.png' %}" alt="BuildTrack Insights Logo" class="logo">
+        </a>
+    </header>
+    <main>
+        <section>
+            <h1>Historical Data For New Construction Sales</h1>
+            <form method="GET" class="data-form">
+                {% csrf_token %}
+                <label for="datapoint">Select Datapoint:</label>
+                <select name="datapoint" id="datapoint">
+                    <option value="Sales Count">Sales Count</option>
+                    <option value="Median Sale Price">Median Sale Price</option>
+                    <option value="Median Sale Price Persqft">Median Sale Price Persqft</option>
+                    <option value="Median Mean Sales Price">Median Mean Sales Price</option>
+                </select><br>
+                <label for="state">Select State:</label>
+                <select name="state" id="state">
+                    <option value="">-- Select State --</option>
+                    {% for state in states %}
+                        <option value="{{ state }}">{{ state }}</option>
+                    {% endfor %}
+                </select><br>
+                <label for="city">Select City:</label>
+                <select name="city" id="city">
+                    <option value="">-- Select City --</option>
+                </select><br>
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>
+        </section>
+        <section>
+            <canvas id="graph-container"></canvas>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 BuildTrack Insights. All rights reserved.
+    </footer>
+</div>
+<script src="{% static 'records.js' %}"></script>
+<script>
+    var citiesByStateJson = {{ cities_by_state_json|safe }};
+</script>
+</body>
+</html>

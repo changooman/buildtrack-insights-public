@@ -1,0 +1,7 @@
+
+*.pyc
+*.pyc
+djangoProject/__pycache__/urls.cpython-310.pyc
+djangoProject/__pycache__/settings.cpython-310.pyc
+buildtrack/__pycache__/views.cpython-310.pyc
+buildtrack/__pycache__/data_retrieval.cpython-310.pyc

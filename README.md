@@ -35,7 +35,7 @@ To run BuildTrack Insights locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/changooman/
+   git clone https://github.com/changooman/buildtrack-insights-public
    
 2. Navigate to the Project Directory:
 
